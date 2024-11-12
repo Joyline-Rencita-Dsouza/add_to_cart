@@ -273,7 +273,7 @@ button {
     height: 100%;
     background-color: #fff;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease; /* Smooth transition for opening/closing */
+    transition: right 0.75s ease; /* Smooth transition for opening/closing */
     padding: 20px;
     z-index: 1000; /* Higher z-index to ensure it appears in front */
 }
@@ -344,6 +344,7 @@ body.cart-open .overlay {
     font-size: 1.5rem; /* Size of the close button */
     cursor: pointer;
     padding: 0; /* Remove default padding */
+    transition: 0.5s ease-in-out;
 }
 /*  styling cart table  */
 .cart-items-table {
@@ -377,6 +378,49 @@ body.cart-open .overlay {
     font-weight: bold; /* Bold total text */
     margin-top: 20px; /* Space above total */
     text-align: center; /* Center the text */
+}
+
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-proceed {
+    background-color: rgb(3, 176, 3);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 155px;
+    margin-top: 20px;
+}
+
+.btn-proceed:hover, .btn-cancel:hover {
+    opacity: 0.8;
+}
+.cart-empty-message {
+    text-align: center;
+    font-size: 16px;
+    color: rgb(77, 74, 74);
 }
 
 /* Large Devices (Desktops and larger screens) */
@@ -455,4 +499,16 @@ body.cart-open .overlay {
         padding: 8px;
         font-size: 0.9em; /* Smaller font size */
     }
+
+    /* Adjustments for the Cancel Button in Extra Small Devices */
+    .btn-cancel {
+        width: 90%; /* Slightly larger width for portrait phones */
+        font-size: 0.8em; /* Even smaller font size */
+        padding: 6px; /* Further reduce padding */
+        margin: 0 auto; /* Center-align the button */
+        display: block; /* Ensure it behaves like a block element */
+    }
+}
+.cart-sidebar.open {
+    transform: translateX(-100%); /* Slide in from the right */
 }
